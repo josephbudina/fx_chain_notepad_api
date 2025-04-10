@@ -1,11 +1,8 @@
+require_relative './router'
+
 class App
   def call(env)
     req = Rack::Request.new(env)
-
-    if req.path == "/ping"
-      [200, { "Content-Type" => "application/json" }, ['{"message": "pong"}']]
-    else
-      [404, { "Content-Type" => "application/json" }, ['{"error": "not found"}']]
-    end
+    Router.route(req)
   end
 end
