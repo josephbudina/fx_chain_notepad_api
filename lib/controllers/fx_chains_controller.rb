@@ -2,7 +2,6 @@ require 'json'
 
 class FxChainsController
   def self.index
-    binding.pry
     body = [{ id: 1, name: "Dreamy Reverb Chain" }].to_json
     [
       200,
