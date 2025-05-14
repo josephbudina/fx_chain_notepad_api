@@ -3,4 +3,7 @@
 *.swp
 *.swo
 
+
 .env
+# testing
+/coverage
