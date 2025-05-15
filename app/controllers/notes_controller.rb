@@ -1,7 +1,7 @@
 require 'json'
 
-class FxChainsController
-  def self.index
+class NotesController
+  def index
     body = [{ id: 1, name: "Dreamy Reverb Chain" }].to_json
     [
       200,
@@ -10,7 +10,7 @@ class FxChainsController
     ]
   end
 
-  def self.create(req)
+  def create(req)
     body = JSON.parse(req.body.read)
 
     response_body= body.merge(id: rand(1000)).to_json
