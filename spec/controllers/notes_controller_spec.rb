@@ -3,8 +3,8 @@ require './app/controllers/notes_controller'
 
 describe NotesController do
   it 'should index fx chain' do
-    index = described_class.index
+    result = described_class.new
 
-    expect(index).to eq(["DOWN", "LEFT"])
+    expect(result.index).to eq(["DOWN", "LEFT"])
   end
 end
