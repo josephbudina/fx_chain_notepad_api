@@ -1,13 +1,8 @@
 require 'json'
 
 class NotesController
-  def index
-    body = [{ id: 1, name: "Dreamy Reverb Chain" }].to_json
-    [
-      200,
-      { "Content-Type" => "application/json" },
-      [body]
-    ]
+  def index(id)
+    DB[:notes].all
   end
 
   def create(req)

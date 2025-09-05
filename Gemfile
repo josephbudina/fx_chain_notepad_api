@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'pry'
 gem 'rspec'
+gem 'factory_bot'
 gem 'rake'
 gem 'dotenv'
 gem 'sequel'
