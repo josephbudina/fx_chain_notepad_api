@@ -1,7 +1,7 @@
 require './spec_helper'
-require 'controllers/fx_chains_controller'
+require './app/controllers/notes_controller'
 
-describe FxChainsController do
+describe NotesController do
   it 'should index fx chain' do
     index = described_class.index
 

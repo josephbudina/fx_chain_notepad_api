@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-04-12T19:01:49-07:00">2025-04-12T19:01:49-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-09-04T20:55:00-07:00">2025-09-04T20:55:00-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -22,14 +22,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  66.67%
+  50.0%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.67
+         0.5
        </span>
     </span> hits/line
     )
@@ -42,11 +42,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>9</b> relevant lines,
-    <span class="green"><b>6</b> lines covered</span> and
-    <span class="red"><b>3</b> lines missed. </span>
+    <b>8</b> relevant lines,
+    <span class="green"><b>4</b> lines covered</span> and
+    <span class="red"><b>4</b> lines missed. </span>
     (<span class="red">
-  66.67%
+  50.0%
 </span>
 )
   </div>
@@ -70,13 +70,13 @@
       <tbody>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#c2afbcbcbcb4a9615be45a65c09fe5ec8b8047f7" class="src_link" title="lib/controllers/fx_chains_controller.rb">lib/controllers/fx_chains_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">66.67 %</td>
-            <td class="cell--number">24</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">0.67</td>
+            <td class="strong t-file__name"><a href="#b7e06da970ee2aac8e6ab1566f053b6e4227bcab" class="src_link" title="app/controllers/notes_controller.rb">app/controllers/notes_controller.rb</a></td>
+            <td class="red strong cell--number t-file__coverage">50.00 %</td>
+            <td class="cell--number">19</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">0.50</td>
             
           </tr>
         
@@ -97,12 +97,12 @@
 
       <div class="source_files">
       
-        <div class="source_table" id="c2afbcbcbcb4a9615be45a65c09fe5ec8b8047f7">
+        <div class="source_table" id="b7e06da970ee2aac8e6ab1566f053b6e4227bcab">
   <div class="header">
-    <h3>lib/controllers/fx_chains_controller.rb</h3>
+    <h3>app/controllers/notes_controller.rb</h3>
     <h4>
       <span class="red">
-  66.67%
+  50.0%
 </span>
 
       lines covered
@@ -111,9 +111,9 @@
     
 
     <div class="t-line-summary">
-      <b>9</b> relevant lines.
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <b>8</b> relevant lines.
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
 
     
@@ -153,7 +153,7 @@
 
             
 
-            <code class="ruby">class FxChainsController</code>
+            <code class="ruby">class NotesController</code>
           </li>
         </div>
       
@@ -165,19 +165,17 @@
 
             
 
-            <code class="ruby">  def self.index</code>
+            <code class="ruby">  def index(id)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            
-              <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="5">
             
 
             
 
-            <code class="ruby">    body = [{ id: 1, name: &quot;Dreamy Reverb Chain&quot; }].to_json</code>
+            <code class="ruby">    DB[:notes].all</code>
           </li>
         </div>
       
@@ -187,39 +185,39 @@
 
             
 
-            <code class="ruby">    [</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="7">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
             
               <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      200,</code>
+            <code class="ruby">  def create(req)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="missed" data-hits="0" data-linenumber="9">
             
 
             
 
-            <code class="ruby">      { &quot;Content-Type&quot; =&gt; &quot;application/json&quot; },</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-
-            
-
-            <code class="ruby">      [body]</code>
+            <code class="ruby">    body = JSON.parse(req.body.read)</code>
           </li>
         </div>
       
@@ -229,17 +227,17 @@
 
             
 
-            <code class="ruby">    ]</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="missed" data-hits="0" data-linenumber="11">
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    response_body= body.merge(id: rand(1000)).to_json</code>
           </li>
         </div>
       
@@ -254,59 +252,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def self.create(req)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="14">
-            
-
-            
-
-            <code class="ruby">    body = JSON.parse(req.body.read)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="16">
-            
-
-            
-
-            <code class="ruby">    response_body= body.merge(id: rand(1000)).to_json</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="18">
+          <li class="never" data-hits="" data-linenumber="13">
             
 
             
@@ -316,7 +262,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="19">
+          <li class="missed" data-hits="0" data-linenumber="14">
             
 
             
@@ -326,7 +272,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
+          <li class="never" data-hits="" data-linenumber="15">
             
 
             
@@ -336,7 +282,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="never" data-hits="" data-linenumber="16">
             
 
             
@@ -346,7 +292,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
+          <li class="never" data-hits="" data-linenumber="17">
             
 
             
@@ -356,7 +302,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="never" data-hits="" data-linenumber="18">
             
 
             
@@ -366,7 +312,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="19">
             
 
             
