@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :notes do
-    id { "John" }
-    title { "Doe" }
-    body { false }
+    title { Faker::Book.title }
+    body { Faker::Quote.random }
   end
 end
