@@ -1,5 +1,6 @@
 require 'simplecov'
 SimpleCov.start
+require './app/conn'
 require './app/models'
 require 'rspec'
 require 'pry'
@@ -11,6 +12,12 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     FactoryBot.find_definitions
+  end
+
+	config.around(:each) do |example|
+    DB.transaction(rollback: :always, auto_savepoint: true) do
+      example.run
+    end
   end
 end
 
