@@ -1,2 +1,2 @@
-class Notes < Sequel::Model(:notes)
+class Note < Sequel::Model(:notes)
 end
