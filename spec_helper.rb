@@ -1,7 +1,7 @@
 require 'simplecov'
 SimpleCov.start
 require './app/conn'
-require './app/models'
+Dir[File.join(__dir__, "app/models/*.rb")].sort.each { |f| require f }
 require 'rspec'
 require 'pry'
 require 'factory_bot'
