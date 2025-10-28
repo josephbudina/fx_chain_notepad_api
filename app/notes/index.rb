@@ -12,5 +12,7 @@ module Notes
       params[:id] ? Note.with_pk!(params[:id]) : Note.all
     end
   end
+
+
 end
 
