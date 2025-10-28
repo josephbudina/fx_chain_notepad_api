@@ -6,13 +6,13 @@
 ## 🧱 MVP Phase – Core Backend
 
 ### 1. Database Setup
-- [ ] Create Postgres database (`band_app_dev` / `band_app_test`).
-- [ ] Add connection file `app/conn.rb` (Sequel connect + `pg_json` extension).
-- [ ] Run `001_create_core.rb` migration.
-- [ ] Verify schema integrity using `\dt` and `\d table_name`.
+- [x] Create Postgres database (`band_app_dev` / `band_app_test`).
+- [x] Add connection file `app/conn.rb` (Sequel connect + `pg_json` extension).
+- [x] Run `001_create_core.rb` migration.
+- [x] Verify schema integrity using `\dt` and `\d table_name`.
 
 ### 2. Models
-- [ ] Create models for all core tables using `Sequel::Model(:table_name)`:
+- [x] Create models for all core tables using `Sequel::Model(:table_name)`:
   - `user.rb`
   - `band.rb`
   - `band_membership.rb`
@@ -20,12 +20,12 @@
   - `attachment.rb`
   - `event.rb`
   - `event_attendee.rb`
-- [ ] Load models via one-liner in app boot (`app.rb`).
+- [x] Load models via one-liner in app boot (`app.rb`).
 - [ ] Confirm associations work in console (e.g., `Band.first.members`).
 
 ### 3. Migrations + Tests
-- [ ] Add transaction-wrapped RSpec setup (`spec_helper.rb`).
-- [ ] Write migration rollback test (ensure `down` works cleanly).
+- [x] Add transaction-wrapped RSpec setup (`spec_helper.rb`).
+- [x] Write migration rollback test (ensure `down` works cleanly).
 - [ ] Add minimal seed/test data script (`db/seed.rb`).
 
 ### 4. Notes + Attachments
