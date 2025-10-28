@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :notes do
+  factory :note do
     title { Faker::Book.title }
     body { Faker::Quote.rand }
 

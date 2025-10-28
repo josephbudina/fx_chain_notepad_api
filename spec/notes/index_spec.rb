@@ -3,24 +3,34 @@ require './app/notes/index'
 
 RSpec.describe Notes::Index do
   describe '.call' do
-    it 'persists and returns record' do
-      params = {body: "foo", title: "bar"}
-      result = described_class.(params)
+    context 'when id is provided' do
+      it 'returns matching note' do
+        notes = create_list(:note, 25)
+        params = { id: notes.first.id }
 
-      expect { described_class.call(params) }
-        .to change { Note.count }.by(1)
+        result = described_class.(params)
 
-      note = Note.order(:id).last
-      expect(note).to be_a(Note)
-      expect(note.id).not_to be_nil
-      expect(note).to have_attributes(title: params[:title], body: params[:body])
+        expect(result).to be_a(Note)
+        expect(result.id).to eq(notes.first.id)
+        expect(result.title).to eq(notes.first.title)
+      end
+
+      it 'raises when not found' do
+        expect {
+          described_class.call(id: -1)
+        }.to raise_error(Sequel::NoMatchingRow)
+      end
     end
 
-    it 'returns the created instance' do
-      params = { title: 'title', body: 'body' }
-      note = described_class.call(params)
+    context 'when id is not provided' do
+      it 'returns all notes' do
+        notes = create_list(:note, 25)
 
-      expect(note).to have_attributes(params)
+        result = described_class.({})
+
+        expect(result).to be_an(Array)
+        expect(result.map(&:id)).to match_array(notes.map(&:id))
+      end
     end
   end
 end
