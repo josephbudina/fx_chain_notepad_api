@@ -1,15 +1,15 @@
-module Notes
+module Users
   class Index
     def self.call(params)
       new.call(params)
     end
 
     def call(params)
-      fetch_notes(params)
+      fetch_users(params)
     end
 
-    def fetch_notes(params)
-      params[:id] ? Note.with_pk!(params[:id]) : Note.all
+    def fetch_users(params)
+      params[:id] ? User.with_pk!(params[:id]) : User.all
     end
   end
 
