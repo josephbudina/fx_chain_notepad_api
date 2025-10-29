@@ -1,15 +1,15 @@
 module Users
-  class Index
+  class Show
     def self.call(params)
       new.call(params)
     end
 
     def call(params)
-      fetch_users(params)
+      fetch_users(params).values
     end
 
     def fetch_users(params)
-      params[:id] ? User.with_pk!(params[:id]) : User.all
+      User.with_pk!(params[:id])
     end
   end
 
