@@ -1,33 +1,22 @@
 require "roda"
+require 'sequel'
+require_relative 'conn'
+require_relative 'models/user'
+
+# Dir[File.join(__dir__, "routes/*.rb")].sort.each { |f| require_relative f }
 
 class App < Roda
+
   route do |r|
     # GET / request
     r.root do
-      r.redirect "/hello"
+      "home"
     end
 
-    # /hello branch
-    r.on "hello" do
-      # Set variable for all routes in /hello branch
-      @greeting = 'Hello'
-
-      # GET /hello/world request
-      r.get "world" do
-        "#{@greeting} world!"
-      end
-
-      # /hello request
-      r.is do
-        # GET /hello request
+    r.on "v1" do
+      r.on "users" do
         r.get do
-          "#{@greeting}!"
-        end
-
-        # POST /hello request
-        r.post do
-          puts "Someone said #{@greeting}!"
-          r.redirect
+          "#{User.all}"
         end
       end
     end

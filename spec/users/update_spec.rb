@@ -1,18 +1,18 @@
 require './spec_helper'
-require './app/notes/index'
+require './app/users/index'
 
-RSpec.describe Notes::Index do
+RSpec.describe Users::Index do
   describe '.call' do
     context 'when id is provided' do
-      it 'returns matching note' do
-        notes = create_list(:note, 25)
-        params = { id: notes.first.id }
+      it 'returns matching user' do
+        users = create_list(:user, 25)
+        params = { id: users.first.id }
 
         result = described_class.(params)
 
-        expect(result).to be_a(Note)
-        expect(result.id).to eq(notes.first.id)
-        expect(result.title).to eq(notes.first.title)
+        expect(result).to be_a(User)
+        expect(result.id).to eq(users.first.id)
+        expect(result.title).to eq(users.first.title)
       end
 
       it 'raises when not found' do
@@ -23,13 +23,13 @@ RSpec.describe Notes::Index do
     end
 
     context 'when id is not provided' do
-      it 'returns all notes' do
-        notes = create_list(:note, 25)
+      it 'returns all users' do
+        users = create_list(:user, 25)
 
         result = described_class.({})
 
         expect(result).to be_an(Array)
-        expect(result.map(&:id)).to match_array(notes.map(&:id))
+        expect(result.map(&:id)).to match_array(users.map(&:id))
       end
     end
   end
